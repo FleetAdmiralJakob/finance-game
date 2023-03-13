@@ -12,6 +12,8 @@ public class IncreaseMoney : MonoBehaviour
 
     public void Increase()
         {
+            AudioManager audioManager = FindObjectOfType<AudioManager>();
+            audioManager.PlayMoneySound();
             GlobalManager.data.money += GlobalManager.data.level * 2;
             moneyText.text = "Money: $" + GlobalManager.data.money.ToString();
             if (GlobalManager.data.money >= GlobalManager.data.level * 200 && GlobalManager.data.level == 1)
