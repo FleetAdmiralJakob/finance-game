@@ -3,7 +3,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioClip moneySound;
-    private const float Volume = 0.5f;
+    private const float Volume = 0.1f;
     
     public void PlayMoneySound()
     {

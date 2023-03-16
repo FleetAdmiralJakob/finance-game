@@ -25,7 +25,7 @@ public class LevelScript : MonoBehaviour
 
     public void ChangeImage()
     {
-        if (GlobalManager.data.money == 0)
+        if (GlobalManager.data.money < 33)
         {
             GetComponent<Image>().sprite = zero;
         }
