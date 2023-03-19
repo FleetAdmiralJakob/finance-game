@@ -15,7 +15,7 @@ public class LevelScript : MonoBehaviour
     
     public void Update()
     {
-        levelText.text = "Level " + GlobalManager.data.level.ToString();
+        levelText.text = "Level " + GlobalManager.data.Level.ToString();
     }
     
     public void Start()
@@ -25,55 +25,55 @@ public class LevelScript : MonoBehaviour
 
     public void ChangeImage()
     {
-        if (GlobalManager.data.money < 33)
+        if (GlobalManager.data.Money < 33)
         {
             GetComponent<Image>().sprite = zero;
         }
-        else if (GlobalManager.data.money >= 33 * GlobalManager.data.level && GlobalManager.data.money <= 67 * GlobalManager.data.level && GlobalManager.data.level == 1)
+        else if (GlobalManager.data.Money >= 33 * GlobalManager.data.Level && GlobalManager.data.Money <= 67 * GlobalManager.data.Level && GlobalManager.data.Level == 1)
         {
             GetComponent<Image>().sprite = one;
         }
-        else if (GlobalManager.data.money >= 67 * GlobalManager.data.level && GlobalManager.data.money <= 100 * GlobalManager.data.level && GlobalManager.data.level == 1)
+        else if (GlobalManager.data.Money >= 67 * GlobalManager.data.Level && GlobalManager.data.Money <= 100 * GlobalManager.data.Level && GlobalManager.data.Level == 1)
         {
             GetComponent<Image>().sprite = two;
         }
-        else if (GlobalManager.data.money >= 100 * GlobalManager.data.level && GlobalManager.data.money <= 133 * GlobalManager.data.level && GlobalManager.data.level == 1)
+        else if (GlobalManager.data.Money >= 100 * GlobalManager.data.Level && GlobalManager.data.Money <= 133 * GlobalManager.data.Level && GlobalManager.data.Level == 1)
         {
             GetComponent<Image>().sprite = three;
         }
-        else if (GlobalManager.data.money >= 133 * GlobalManager.data.level && GlobalManager.data.money <= 167 * GlobalManager.data.level && GlobalManager.data.level == 1)
+        else if (GlobalManager.data.Money >= 133 * GlobalManager.data.Level && GlobalManager.data.Money <= 167 * GlobalManager.data.Level && GlobalManager.data.Level == 1)
         {
             GetComponent<Image>().sprite = four;
         }
-        else if (GlobalManager.data.money >= 167 * GlobalManager.data.level && GlobalManager.data.money <= 199 * GlobalManager.data.level && GlobalManager.data.level == 1)
+        else if (GlobalManager.data.Money >= 167 * GlobalManager.data.Level && GlobalManager.data.Money <= 199 * GlobalManager.data.Level && GlobalManager.data.Level == 1)
         {
             GetComponent<Image>().sprite = five;
         }
-        else if (GlobalManager.data.money >= 199 * GlobalManager.data.level && GlobalManager.data.level == 1)
+        else if (GlobalManager.data.Money >= 199 * GlobalManager.data.Level && GlobalManager.data.Level == 1)
         {
             GetComponent<Image>().sprite = six;
         }
-        else if (GlobalManager.data.money >= 67 * GlobalManager.data.level && GlobalManager.data.money <= 133 * GlobalManager.data.level)
+        else if (GlobalManager.data.Money >= 67 * GlobalManager.data.Level && GlobalManager.data.Money <= 133 * GlobalManager.data.Level)
         {
             GetComponent<Image>().sprite = one;
         }
-        else if (GlobalManager.data.money >= 133 * GlobalManager.data.level && GlobalManager.data.money <= 100 * GlobalManager.data.level)
+        else if (GlobalManager.data.Money >= 133 * GlobalManager.data.Level && GlobalManager.data.Money <= 100 * GlobalManager.data.Level)
         {
             GetComponent<Image>().sprite = two;
         }
-        else if (GlobalManager.data.money >= 200 * GlobalManager.data.level && GlobalManager.data.money <= 267 * GlobalManager.data.level)
+        else if (GlobalManager.data.Money >= 200 * GlobalManager.data.Level && GlobalManager.data.Money <= 267 * GlobalManager.data.Level)
         {
             GetComponent<Image>().sprite = three;
         }
-        else if (GlobalManager.data.money >= 267 * GlobalManager.data.level && GlobalManager.data.money <= 333 * GlobalManager.data.level)
+        else if (GlobalManager.data.Money >= 267 * GlobalManager.data.Level && GlobalManager.data.Money <= 333 * GlobalManager.data.Level)
         {
             GetComponent<Image>().sprite = four;
         }
-        else if (GlobalManager.data.money >= 333 * GlobalManager.data.level && GlobalManager.data.money <= 399 * GlobalManager.data.level)
+        else if (GlobalManager.data.Money >= 333 * GlobalManager.data.Level && GlobalManager.data.Money <= 399 * GlobalManager.data.Level)
         {
             GetComponent<Image>().sprite = five;
         }
-        else if (GlobalManager.data.money >= 399 * GlobalManager.data.level)
+        else if (GlobalManager.data.Money >= 399 * GlobalManager.data.Level)
         {
             GetComponent<Image>().sprite = six;
         }
