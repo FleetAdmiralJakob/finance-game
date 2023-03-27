@@ -25,11 +25,7 @@ public class LevelScript : MonoBehaviour
 
     public void ChangeImage()
     {
-        if (GlobalManager.data.Money < 33)
-        {
-            GetComponent<Image>().sprite = zero;
-        }
-        else if (GlobalManager.data.Money >= 33 * GlobalManager.data.Level && GlobalManager.data.Money <= 67 * GlobalManager.data.Level && GlobalManager.data.Level == 1)
+        if (GlobalManager.data.Money >= 33 * GlobalManager.data.Level && GlobalManager.data.Money <= 67 * GlobalManager.data.Level && GlobalManager.data.Level == 1)
         {
             GetComponent<Image>().sprite = one;
         }
@@ -52,6 +48,10 @@ public class LevelScript : MonoBehaviour
         else if (GlobalManager.data.Money >= 199 * GlobalManager.data.Level && GlobalManager.data.Level == 1)
         {
             GetComponent<Image>().sprite = six;
+        }
+        else if (GlobalManager.data.Money < 33 * GlobalManager.data.Level)
+        {
+            GetComponent<Image>().sprite = zero;
         }
         else if (GlobalManager.data.Money >= 67 * GlobalManager.data.Level && GlobalManager.data.Money <= 133 * GlobalManager.data.Level)
         {
