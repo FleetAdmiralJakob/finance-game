@@ -32,30 +32,31 @@ public class GlobalManager : MonoBehaviour {
                 PlayerPrefs.SetString("SavedTime", data.SavedTime);
         }
         
-        private static void LoadGame()
-        {
-                if (PlayerPrefs.HasKey("Money") && PlayerPrefs.HasKey("Level") && PlayerPrefs.HasKey("SavedTime")) {
-                        data.Money = PlayerPrefs.GetInt("Money");
-                        data.Level = PlayerPrefs.GetInt("Level");
-                        data.LastTime = PlayerPrefs.GetString("SavedTime");
-                } else if (PlayerPrefs.HasKey("Money") && PlayerPrefs.HasKey("Level")) {
-                        data.Money = PlayerPrefs.GetInt("Money");
-                        data.Level = PlayerPrefs.GetInt("Level");
-                } else if (PlayerPrefs.HasKey("Money") && PlayerPrefs.HasKey("SavedTime")) {
-                        data.Money = PlayerPrefs.GetInt("Money");
-                        data.LastTime = PlayerPrefs.GetString("SavedTime");
-                } else if (PlayerPrefs.HasKey("Level") && PlayerPrefs.HasKey("SavedTime")) {
-                        data.Level = PlayerPrefs.GetInt("Level");
-                        data.LastTime = PlayerPrefs.GetString("SavedTime");
-                }else if (PlayerPrefs.HasKey("Money"))
-                {
-                        data.Money = PlayerPrefs.GetInt("Money");
-                } else if (PlayerPrefs.HasKey("Level"))
-                {
-                        data.Level = PlayerPrefs.GetInt("Level");
-                } else if (PlayerPrefs.HasKey("SavedTime"))
-                {
-                        data.LastTime = PlayerPrefs.GetString("SavedTime");
+        private static void LoadGame() { 
+            void LoadData(string key, ref Data data) {
+                if (PlayerPrefs.HasKey(key)) {
+                        switch (key) {
+                                case "Money":
+                                        data.Money = PlayerPrefs.GetInt(key);
+                                        break;
+                                case "Level":
+                                        data.Level = PlayerPrefs.GetInt(key);
+                                        break;
+                                case "SavedTime":
+                                        data.LastTime = PlayerPrefs.GetString(key);
+                                        break;
+                        }
                 }
+            }
+
+            if (PlayerPrefs.HasKey("Money")) {
+                    LoadData("Money", ref data);
+            }
+            if (PlayerPrefs.HasKey("Level")) {
+                    LoadData("Level", ref data);
+            }
+            if (PlayerPrefs.HasKey("SavedTime")) {
+                    LoadData("SavedTime", ref data);
+            }
         }
 }
